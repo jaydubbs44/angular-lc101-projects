@@ -1,3 +1,4 @@
+import { ArrayType } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -23,10 +24,24 @@ export class CandidatesComponent implements OnInit {
   ngOnInit() {
   }
 
-  // Code the addToCrew function here:
+  addToCrew (candidate: object) {
+    if (!this.crew.includes(candidate)){
+      this.crew.push(candidate);
+    }
+  }
+  
+  clearCrew (fullCrew: []){
+    while (fullCrew.length > 0){
+      let i = 0;
+      fullCrew.pop();
+      i++
+    }
+  }
 
 
   // BONUS: Code the changeMissionName function here:
-
+  changeMissionName (newName1: string) {
+    this.missionName = newName1;
+  }
 
 }
